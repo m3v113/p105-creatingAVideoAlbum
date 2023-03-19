@@ -22,7 +22,7 @@ outputvid = cv2.VideoWriter("project105.avi", cv2.VideoWriter_fourcc(*"DIVX"), 0
 
 for i in range(0, count-1):
     frame = cv2.imread(images[i])
-    outputvid.write(frame)
+    outputvid.write(cv2.resize(cv2.imread(images[i]), (width, height)))
     print("done")
 
 outputvid.release()
